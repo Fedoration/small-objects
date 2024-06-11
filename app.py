@@ -77,7 +77,7 @@ class SmallObjectsDetectorApp:
 
         if st.session_state.images:
             st.write("Starting slideshow with detection...")
-            display_detection = st.checkbox("Show detections", value=True)
+            display_detection = st.toggle("Show detections", value=True)
             selected_images = []
             for i, img in enumerate(st.session_state.images):
                 if display_detection:
@@ -88,28 +88,6 @@ class SmallObjectsDetectorApp:
             self.slideshow(selected_images)
         else:
             st.info("Please upload images.")
-
-        # detect_people = st.checkbox("Find people", value=True)
-        # detect_vehicles = st.checkbox("Find vehicles", value=True)
-        # detect_buildings = st.checkbox("Find buildings", value=True)
-
-        # if uploaded_files:
-        #     self.load_images(uploaded_files)
-        #     if self.images:
-        #         st.write("Starting slideshow with YOLOv8 detection...")
-        #         selected_images = []
-        #         display_detection = st.toggle("Show detections", value=True)
-        #         for i, img in enumerate(self.images):
-        #             if display_detection:
-        #                 selected_images.append(self.detected_images[i])
-        #             else:
-        #                 selected_images.append(img)
-
-        #         self.slideshow(selected_images)
-        #     else:
-        #         st.error("No images found in the uploaded files.")
-        # else:
-        #     st.info("Please upload images.")
 
 
 # Запуск приложения

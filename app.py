@@ -20,7 +20,7 @@ class SmallObjectsDetectorApp:
         self.model = AutoDetectionModel.from_pretrained(
             model_type="yolov8",
             model_path=model_path,
-            confidence_threshold=0.6,
+            confidence_threshold=0.56,
             device="cpu",
         )
         self.images = []
